@@ -9,6 +9,7 @@ const CS	=process.env.MONGO_CS;
 const DB	=process.env.MONGO_DB;
 const str   = "mongodb+srv://" + USER + ":" + PW + "@" + CS + "/" + DB + "?retryWrites=true";
 
+console.log("connecting......");
 // Connecting
 mongoose.connect(str, { useNewUrlParser: true });
 //mongoose.connect("mongodb+srv://mongorootuser:7cU7KqmwItQlBJi7@cluster0-mcbfw.mongodb.net/pamzc?retryWrites=true", { useNewUrlParser: true });
