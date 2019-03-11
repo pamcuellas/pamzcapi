@@ -4,19 +4,21 @@ const rootAPIURL = process.env.ROOT_API_URL || 'pamzcapi';
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-
+const cors = require('cors');
 
 const contactRoutes = require("./routes/Contact");
 const requestRoutes = require("./routes/Request");
 
+const corsOptions = {
+  origin: 'http://localhost'
+}
 
 // To access BODY from requests 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-
 // Router for Contact
-app.use(rootAPIURL + "/contacts", contactRoutes);
+app.use(rootAPIURL + "/contacts", cors(corsOptions), contactRoutes);
 
 // Router for Request
 app.use(rootAPIURL + "/requests", requestRoutes);
