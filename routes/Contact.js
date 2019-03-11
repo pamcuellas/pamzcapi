@@ -9,7 +9,7 @@ router.route('/')
 	.post(helperContact.createContact)	// Create a new Contact
 
 router.route('/:contactId"')
-	.get   (helperContact.getContact) 	// Getting a specifi Contact
+	.get   (helperContact.getContact) 	// Getting a specific Contact
 	.put   (helperContact.updateContact)// Updating a Contact
 	.delete(helperContact.deleteContact)// Deleting a Contact
 

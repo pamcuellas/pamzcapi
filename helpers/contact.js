@@ -4,7 +4,7 @@
 var db = require("../models");
 
 exports.getContacts = (req, res) => {
-	db.Contact.find() // Here, remember that we are using Promise. That means this code could be different.
+	db.Contact.find() // Here, remember that we are using Promise. That means this code will be different without Promise.
 	.then(  contacts => res.json(contacts) ) // We should customize the return here to give back just the fields that matters.
 	.catch( err  	 => res.send(err	 ) );
 }
@@ -28,8 +28,8 @@ exports.updateContact = (req, res) => {
 }
 
 exports.deleteContact = (req, res) => {
-	db.Contact.remove( {_id: req.params.contactId} ) // {new: true} here means to return the new version of contact after update. If we do not put this parameter, will be return the last version of customer.
-	.then(  deleteStatus => res.json(deleteStatus) ) // Returns information related to the delete process (ok or not).
+	db.Contact.remove( {_id: req.params.contactId} ) 
+	.then(  deleteStatus => res.json(deleteStatus) ) 
 	.catch( err  	 => res.send(err	 ) );
 }
 
