@@ -8,14 +8,16 @@ const cors 			= require('cors');
 
 const contactRoutes = require("./routes/Contact");
 const requestRoutes = require("./routes/Request");
-const corsOptions 	= require("./helpers/cors");
+const checkCors 	= require("./helpers/cors");
 
 // To access BODY from requests 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.use(cors(checkCors.corsOptions));
+
 // Router for Contact
-app.use(rootAPIURL + "/contacts", cors(corsOptions), contactRoutes);
+app.use(rootAPIURL + "/contacts", contactRoutes);
 
 // Router for Request
 app.use(rootAPIURL + "/requests", requestRoutes);
