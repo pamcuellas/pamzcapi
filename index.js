@@ -1,17 +1,14 @@
 require('dotenv').config();
-const port = process.env.PORT || 8080;
-const rootAPIURL = process.env.ROOT_API_URL || 'pamzcapi';
-const express = require("express");
-const app = express();
-const bodyParser = require("body-parser");
-const cors = require('cors');
+const rootAPIURL 	= process.env.ROOT_API_URL || 'pamzcapi';
+const PORT 			= process.env.PORT || 8080;
+const express 		= require("express");
+const app 			= express();
+const bodyParser 	= require("body-parser");
+const cors 			= require('cors');
 
 const contactRoutes = require("./routes/Contact");
 const requestRoutes = require("./routes/Request");
-
-const corsOptions = {
-  origin: 'http://localhost'
-}
+const corsOptions 	= require("./helpers/cors");
 
 // To access BODY from requests 
 app.use(bodyParser.json());
@@ -34,6 +31,6 @@ app.get("*", function(req, res){
 });
 
 
-app.listen(port , process.env.IP, function( ){
- 	console.log("PAMZCAPI has started at PORT ", process.env.PORT);
+app.listen(PORT , process.env.IP, function( ){
+ 	console.log("PAMZCAPI has started at PORT ", PORT);
 });
