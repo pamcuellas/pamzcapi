@@ -3,30 +3,30 @@ const mongoose = require("mongoose");
 const contactSchema = new mongoose.Schema({
 	firstname: { 
 		type: String,
-		required: 'First Name cannot be blank!'
+		required: 'cannot be blank!'
 	},
 	lastname: { 
 		type: String,
-		required: 'Last Name cannot be blank!'
+		required: 'cannot be blank!'
 	},
 	email: { 
 		type: String,
-		required: 'Email cannot be blank!'
+		required: 'cannot be blank!'
 	},
 	message: { 
 		type: String,
-		required: 'Message cannot be blank!' 
+		required: 'cannot be blank!' 
 	},
 	ip: { 
-		type: String,
-		required: 'IP cannot be blank!' 
+		type: String
 	},
 	created_at: { 
 		type: Date, 
 		default: Date.now() 
 	},
-	authorization: { 
-		type: String 
+	'recaptcha-token': { 
+		type: String, 
+		required: ' was not provided!' 
 	},
 	authentication: { 
 		type: String 
