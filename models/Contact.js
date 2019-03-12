@@ -24,7 +24,7 @@ const contactSchema = new mongoose.Schema({
 		type: Date, 
 		default: Date.now() 
 	},
-	'recaptcha-token': { 
+	recaptchatoken: { 
 		type: String, 
 		required: ' was not provided!' 
 	},
