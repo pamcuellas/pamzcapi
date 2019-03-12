@@ -14,6 +14,7 @@ const checkCors 	= require("./helpers/cors");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+// Restrict access just for our Apps.
 app.use(cors(checkCors.corsOptions));
 
 // Router for Contact

@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 var requestSchema = new mongoose.Schema ({
+	'resource':					String,
 	'ip':						String,
 	'host':  					String,
 	'connection':   			String,

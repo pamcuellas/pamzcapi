@@ -1,4 +1,4 @@
-const whitelist = (process.env.CORS_WHITELIST !== undefined) ? process.env.CORS_WHITELIST.split(',') : [];
+const whitelist = (process.env.CORS_WHITELIST !== undefined) ? [...  process.env.CORS_WHITELIST.split(',') ] : [];
 
 exports.corsOptions = {
   origin: function(origin, callback) {

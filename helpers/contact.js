@@ -10,6 +10,7 @@ exports.getContacts = (req, res) => {
 }
 
 exports.createContact = (req, res) => {
+	req.body.ip = req.ip; // Add the user IP to the record.
 	db.Contact.create( req.body ) 
 	.then(  newContact => res.status(201).json(newContact) ) // 201 here is the code for successfull created.
 	.catch( err  	 => res.send(err	 ) );
