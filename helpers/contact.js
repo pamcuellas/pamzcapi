@@ -4,7 +4,7 @@
 var db = require("../models");
 
 exports.getContacts = (req, res) => {
-	db.Contact.find() // Here, remember that we are using Promise. That means this code will be different without Promise.
+	db.Contact.find()   
 	.then(  contacts => res.json(contacts) ) // We should customize the return here to give back just the fields that matters.
 	.catch( err  	 => res.send(err	 ) );
 }

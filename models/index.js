@@ -12,7 +12,7 @@ const str   = "mongodb+srv://" + USER + ":" + PW + "@" + CS + "/" + DB + "?retry
 console.log("connecting......");
 // Connecting
 mongoose.connect(str, { useNewUrlParser: true });
-//mongoose.connect("mongodb+srv://mongorootuser:7cU7KqmwItQlBJi7@cluster0-mcbfw.mongodb.net/pamzc?retryWrites=true", { useNewUrlParser: true });
+
 mongoose.Promise = Promise;
 
 module.exports.Contact = require("./Contact");

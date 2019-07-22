@@ -3,8 +3,8 @@ const whitelist = (process.env.CORS_WHITELIST !== undefined) ? [...  process.env
 exports.corsOptions = {
   origin: function(origin, callback) {
 
-  	console.log("whitelist ", whitelist); 
-  	console.log("origin ", origin); 
+  	//console.log("whitelist ", whitelist); 
+  	//console.log("origin ", origin); 
 
   	if (origin === undefined) { // Origin is undefined when you are on the same server. 
 	      return callback(null, true)
