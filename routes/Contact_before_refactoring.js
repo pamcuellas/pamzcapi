@@ -20,7 +20,7 @@ router.post("/", (req, res) => {
 // Getting a specifi Contact
 router.get("/:contactId", (req, res) => {
 	db.Contact.findById( req.params.contactId ) 
-	.then(  foundContact => res.json(foundContact) ) // Returns the Contact found
+	.then(  foundContact => res.json(foundContact) ) // Returns the Contact found.
 	.catch( err  	 => res.send(err	 ) );
 });
 
